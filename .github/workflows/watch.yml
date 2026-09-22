@@ -2,7 +2,11 @@ name: tennis-watch
 
 on:
   schedule:
+    # Kept as a fallback. GitHub's scheduler is unreliable on free public repos
+    # and may never fire — the repository_dispatch trigger below is the real one.
     - cron: "*/15 * * * *"
+  repository_dispatch:
+    types: [tennis-check]
   workflow_dispatch:
     inputs:
       mode:
