@@ -3,7 +3,7 @@ name: tennis-watch
 on:
   schedule:
     # every 5 min. GitHub's scheduler is best-effort — expect real gaps of 5-15 min.
-    - cron: "*/5 * * * *"
+    - cron: "*/15 * * * *"
   workflow_dispatch:
     inputs:
       mode:
